@@ -400,6 +400,9 @@ textarea{min-height:90px;resize:vertical}
 
 <div class="main-content" id="mainContent">
   <div class="page">
+    <button class="music" id="musicBtn" aria-label="Play music">♪</button>
+    <audio id="music" loop preload="auto"><source src="assets/music_full.mp3" type="audio/mpeg"></audio>
+
     <section class="hero">
       <div class="flower tl"></div><div class="flower tr"></div><div class="flower bl"></div><div class="flower br"></div>
       <div class="lantern left"></div><div class="lantern right"></div>
@@ -584,7 +587,19 @@ document.getElementById('openInvitation').addEventListener('click',async(e)=>{
   setTimeout(()=>cover.classList.add('opened'), 620);
   setTimeout(()=>petals.classList.remove('active'), 9000);
   window.scrollTo(0,0);
+  try{await document.getElementById('music').play();playing=true;document.getElementById('musicBtn').textContent='Ⅱ'}catch(e){}
 });
+
+const music=document.getElementById('music');
+const mb=document.getElementById('musicBtn');
+let playing=false;
+mb.onclick=async()=>{
+  try{
+    if(playing){music.pause();mb.textContent='♪'}
+    else{await music.play();mb.textContent='Ⅱ'}
+    playing=!playing;
+  }catch(e){}
+};
 
 // ↓↓↓ Replace this with your real Formspree endpoint (see instructions) ↓↓↓
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xjgnaweb';
