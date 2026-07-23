@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Tarek and Esraa//Engagement Invitation//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:tarek-esraa-20260822@engagement
+DTSTAMP:20260723T000000Z
+DTSTART;TZID=Africa/Cairo:20260822T200000
+DTEND;TZID=Africa/Cairo:20260822T230000
+SUMMARY:Tarek & Esraa Engagement
+LOCATION:Sea Walk Restaurant\, Engineers Club Sea Bay\, 315 El-Gaish Rd\, Alexandria
+DESCRIPTION:We hope to celebrate with you.
+END:VEVENT
+END:VCALENDAR
